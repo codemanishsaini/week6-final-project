@@ -1,3 +1,4 @@
+
 * {
   margin: 0;
   padding: 0;
@@ -5,13 +6,10 @@
 }
 
 body {
-  font-family: system-ui, sans-serif;
-  background: #f1f5f9;
-  color: #1e293b;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f3f4f6;
+  color: #333;
   line-height: 1.6;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
 }
 
 header {
@@ -19,26 +17,169 @@ header {
   color: white;
   text-align: center;
   padding: 2rem 1rem;
+  margin-bottom: 2rem;
 }
 
-main {
-  flex: 1;
+header h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.container {
   max-width: 900px;
-  margin: 2rem auto;
-  padding: 0 1rem;
-  width: 100%;
+  margin: 0 auto;
+  padding: 0 1rem 3rem 1rem;
 }
 
-section {
+.form-section {
   background: white;
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
 }
 
-footer {
-  background: #1e293b;
+.form-section h2 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: #4f46e5;
+}
+
+#studentForm {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+#studentForm input, 
+#studentForm select {
+  flex: 1 1 200px;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  outline: none;
+}
+
+#studentForm input:focus, 
+#studentForm select:focus {
+  border-color: #4f46e5;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #4f46e5;
   color: white;
-  text-align: center;
-  padding: 1rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background-color: #4338ca;
+}
+
+.msg {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+.msg.success { color: #16a34a; }
+.msg.error { color: #dc2626; }
+.controls {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.controls input, 
+.controls select {
+  flex: 1 1 200px;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.students-section h2 {
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.student-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.student-card {
+  background: white;
+  padding: 1.2rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  border-left: 5px solid #4f46e5;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.student-card h3 {
+  font-size: 1.2rem;
+  color: #111;
+}
+
+.student-card p {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.course-tag {
+  display: inline-block;
+  background: #e0e7ff;
+  color: #4f46e5;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  align-self: flex-start;
+  margin-top: 5px;
+}
+
+.card-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.card-actions button {
+  flex: 1;
+  padding: 8px;
+  font-size: 0.85rem;
+}
+
+.btn-edit { background-color: #f59e0b; }
+.btn-edit:hover { background-color: #d97706; }
+
+.btn-delete { background-color: #ef4444; }
+.btn-delete:hover { background-color: #dc2626; }
+
+@media (max-width: 600px) {
+  header h1 { font-size: 1.5rem; }
+  
+  #studentForm, 
+  .controls {
+    flex-direction: column; /* Mobile par ek ke neeche ek */
+  }
+  
+  #studentForm input, 
+  #studentForm select,
+  #studentForm button,
+  .controls input, 
+  .controls select {
+    width: 100%;
+  }
 }

@@ -3,26 +3,51 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Final Project - Student Management</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Student Management System</title>
+  <link rel="stylesheet" href="index.css">
 </head>
 <body>
+
   <header>
-    <h1>🎓 Student Management System</h1>
+    <h1>🎓 Student Management</h1>
     <p>Internship Final Project</p>
   </header>
 
-  <main>
-    <section>
-      <h2>Welcome!</h2>
-      <p>Ye mera final project hai. Git aur GitHub seekh raha hoon.</p>
-      <p>Author: Manish Saini</p>
+  <main class="container">
+    <section class="form-section">
+      <h2 id="form-title">Add New Student</h2>
+      <form id="studentForm">
+        <input type="text" id="name" placeholder="Student Name" required>
+        <input type="email" id="email" placeholder="Email Address" required>
+        <input type="number" id="age" placeholder="Age" min="5" max="100" required>
+        <select id="course" required>
+          <option value="">Select Course</option>
+          <option value="BCA">BCA</option>
+          <option value="BBA">BBA</option>
+           <option value="BSC">Bsc</option>
+          <option value="B.Tech">B.Tech</option>
+        </select>
+        <button type="submit" id="submitBtn">Add Student</button>
+        <button type="button" id="cancelBtn" style="display: none; background: #64748b;">Cancel</button>
+      </form>
+      <p id="message" class="msg"></p>
+    </section>
+
+    <section class="controls">
+      <input type="text" id="searchInput" placeholder="🔍 Search by name...">
+      <select id="filterCourse">
+        <option value="all">All Courses</option>
+        <option value="BCA">BCA</option>
+        <option value="BBA">BBA</option>
+        <option value="B.Tech">B.Tech</option>
+      </select>
+    </section>
+
+    <section class="students-section">
+      <h2>Students List (<span id="studentCount">0</span>)</h2>
+      <div id="studentList" class="student-grid"></div>
     </section>
   </main>
-
-  <footer>
-    <p>© 2026 Manish Saini | Final Project</p>
-  </footer>
 
   <script src="script.js"></script>
 </body>
