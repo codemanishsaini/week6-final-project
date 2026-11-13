@@ -61,6 +61,6 @@ function showStudents() {
 }
 
 function deleteStudent(index) {
-  students.splice(index, 1); // Array se hatao
-  showStudents(); // Wapas list dikhao
+  students.splice(index, 1); 
+  showStudents(); // 
 }
