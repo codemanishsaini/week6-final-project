@@ -20,7 +20,6 @@ form.addEventListener('submit', function(event) {
     alert('Please fill all details!');
     return;
   }
-
   
   const newStudent = {
     name: name,
